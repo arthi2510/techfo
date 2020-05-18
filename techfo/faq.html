@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="myctrl">
+	<head>
+		<title>TechFo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/css/style.css">
+		<link rel="stylesheet" href="css/css/aboutstyle.css">
+		<link rel="stylesheet" href="css/css/animate.css">
+		<script src="js/js/wow.min.js"></script>
+		<script src="js/js/jquery-3.4.1.min.js"></script>
+		   <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+		   integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		 <script>
+			new WOW().init();
+           </script>
+		<script>
+		
+var myApp = angular.module("myapp", []);
+myApp.controller("myctrl", function($scope) {
+$scope.comhide=true;
+$scope.showHide=function()
+{
+$scope.comhide=false;
+}
+var com = [
+{name: "Congnizant Technology Solutions", vac: "5", loc: "Bangalore"},
+{name: "Tata Consulting Services", vac: "3", loc: "Bangalore"},
+{name: "Congnizant Technology Solutions", vac: "10", loc: "Coimbatore"},
+{name: "HCL", vac: "15", loc: "Bangalore"},
+{name: "HCL", vac: "2", loc: "Mumbai"},
+{name: "IBM", vac: "4", loc: "Delhi"},
+{name: "Mercedes", vac: "10", loc: "Mumbai"},
+{name: "ZOHO", vac: "8", loc: "Bangalore"},
+{name: "Amazon", vac: "12", loc: "Coimbatore"},
+{name: "Amazon", vac: "20", loc: "Bangalore"},
+{name: "Amazon", vac: "10", loc: "Chennai"},
+{name: "Congnizant Technology Solutions", vac: "17", loc: "Chennai"},
+{name: "Infosys", vac: "20", loc: "Coimbatore"},
+{name: "Infosys", vac: "22", loc: "Mysore"},
+{name: "Infosys", vac: "12", loc: "Chennai"},
+{name: "Infosys", vac: "15", loc: "Bangalore"},
+
+];
+$scope.company = com;
+$scope.C1 = [
+                    { C1: 1, Name: "Amazon HQ", Photo: "Images/Images/amazon1.jpg" },
+                    { C1: 2, Name: "Amazon Interior 1", Photo: "Images/Images/amazon2.jpg" },
+                    { C1: 3, Name: "Amazon Interior 2", Photo: "Images/Images/amazon3.jpg" },
+                   { C1: 3, Name: "Amazon Interior 3", Photo: "Images/Images/amazon4.jpg" },
+				   { C1: 3, Name: "Amazon Interior 4", Photo: "Images/Images/amazon5.jpg" },
+				   { C1: 3, Name: "Amazon Interior 5", Photo: "Images/Images/amazon6.jpg" },
+				   { C1: 3, Name: "Amazon Interior 6", Photo: "Images/Images/amazon7.jpg" },
+				   { C1: 3, Name: "Amazon Interior 7", Photo: "Images/Images/amazon8.jpg" },
+                   ];
+ 
+            //The Customer object is initially set to first item.
+            $scope.com1 = $scope.C1[0];
+ 
+            //Index is initialized to 1.
+            var index = 1;
+ 
+            //The Image Click function.
+            $scope.ImageClick1 = function () {
+                //The Customer object is fetched and assigned to variable.
+                $scope.com1 = $scope.C1[index];
+ 
+                //Index is incremented.
+                index++;
+ 
+                //Index is again set to 0 if it exceeds the Array length.
+                if (index > $scope.C1.length - 1) {
+                    index = 0
+                }
+            };
+            $scope.C2 = [
+                    { C2: 1, Name: "Amazon HQ", Photo: "Images/Images/google.png" },
+                    { C2: 2, Name: "Amazon Interior 1", Photo: "Images/Images/google1.jpg" },
+                  
+                   { C2: 3, Name: "Amazon Interior 3", Photo: "Images/Images/amazon4.jpg" },
+                   { C2: 4, Name: "Amazon Interior 4", Photo: "Images/Images/amazon5.jpg" },
+                   { C2: 5, Name: "Amazon Interior 5", Photo: "ImagesImages/amazon6.jpg" },
+                   { C2: 6, Name: "Amazon Interior 6", Photo: "Images/Images/amazon7.jpg" },
+                   { C2: 7, Name: "Amazon Interior 7", Photo: "Images/Images/amazon8.jpg" },
+                   ];
+ 
+            //The Customer object is initially set to first item.
+            $scope.com2 = $scope.C2[0];
+ 
+            //Index is initialized to 1.
+            var inde = 1;
+ 
+            //The Image Click function.
+            $scope.ImageClick2 = function () {
+                //The Customer object is fetched and assigned to variable.
+                $scope.com2 = $scope.C2[inde ];
+ 
+                //Index is incremented.
+                inde++;
+ 
+                //Index is again set to 0 if it exceeds the Array length.
+                if (inde > $scope.C2.length - 1) {
+                    inde = 0
+                }
+            };
+});
+
+myApp.directive('ngCust1',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Accenture   :High-Performance Delivered');
+                });}
+        }});
+myApp.directive('ngCust2',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('CTS         :Passion for building stronger business.');
+                });}
+        }});
+myApp.directive('ngCust3',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Google      :Dont be Evil.');
+                });}
+        }});
+myApp.directive('ngCust4',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Infosys    :Powered by intellect, Driven by values');
+                });}
+        }});
+myApp.directive('ngCust5',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Wipro       :Applying Thought');
+                });}
+        }});
+myApp.directive('ngCust6',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('HCL          :Employee first');
+                });}
+        }});
+myApp.directive('ngCust7',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('GE          :Imagination at work');
+                });}
+        }});
+myApp.directive('ngCust8',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('ZOHO         :Made for the world');
+                });}
+        }});
+myApp.directive('ngCust9',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Microsoft      :Your Potential, Our Passion');
+                });}
+        }});
+myApp.directive('ngCust10',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('TCS         :Count on results, partnership and leadership.');
+                });}
+        }});
+myApp.directive('ngCust11',function(){
+        return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('Amazon      :Work Hard. Have Fun. Make History');
+                });}
+}});
+
+</script>
+	</head>
+<style>
+.table
+{
+	border-color:red;
+}
+[ng-cust1],[ng-cust2],[ng-cust3],[ng-cust4],[ng-cust5],[ng-cust6],[ng-cust7],[ng-cust8],[ng-cust9],[ng-cust10],[ng-cust11]
+{
+color:#641E16;
+font-size:15pt;
+font-weight:bold;
+}
+.fbox2
+{
+	background-color:#FDE8E6  ;
+	padding-top:30px;
+	padding-bottom:80px;
+	padding-left:100px;
+	padding-right:100px;
+}
+.fbox2 h3
+{
+	font-weight:bold;
+	font-size:12pt;
+	color:brown;
+}
+.faq1 h4,.fbox2 h4
+{
+color:blue;
+font-size:25pt;
+font-family:Forte;
+text-align:center;
+font-weight:bold;
+text-transform:uppercase;
+}
+.fbox3
+{
+	padding-top:20px;
+	padding-bottom:200px;
+	padding-left:50px;
+	background:lavender;
+}
+</style>	
+<header>
+<div class="top1">
+</div>
+	<div class="wow fadeIn logo">
+		<img src="Images/Images/Capture5.png" alt="TechFo" height="100" width="300">
+	</div>
+	<div class="nav">
+		<nav class="nav1">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="cont.html">Contact Us</a></li>
+				<li><a href="#">COMPANIES</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="clear"></div>
+</header>
+<div class="faq1">
+<h4 class="wow fadeInDown animated" >Job Vacancies</h4>
+<br>
+<input class="wow fadeInDown animated" type="button" value="Click to see Job Vacancies" ng-click="showHide()"></input>
+
+<div class="faq2" ng-hide="comhide">
+<label for="search">Type in a company/location to search</label><br><br>
+<input type="text" ng-model="searchText" /><br />
+<table class="table">
+<thead><tr>
+<th>Company</th><th>No.of.Vacancies</th><th>Location</th>
+</tr> </thead>
+<tbody>
+<tr ng-repeat="e in company | filter:searchText | orderBy: 'name' : false">
+<td>{{e.name | uppercase}}</td>
+<td>{{e.vac}}</td>
+<td>{{e.loc}}</td>
+</tr>
+
+</tbody> </table>
+ </div>
+</div>
+<div class="fbox2">
+	<h4>TAGLINE OF COMPANIES</h4>
+	<h3 style="color:black;text-align:center;font-size:14pt">Click on the name of company to see its tagline!</h3>
+	<br>
+  <div ng-cust1><h3>Accenture</h3></div>
+  <div ng-cust2><h3>Cognizant Technology Solutions</h3></div>
+  <div ng-cust3><h3>Google</h3></div>
+  <div ng-cust4><h3>Infosys</h3></div>
+  <div ng-cust5><h3>Wipro</h3></div>
+  <div ng-cust6><h3>HCL</h3></div>
+  <div ng-cust7><h3>General Electric</h3></div>
+  <div ng-cust8><h3>ZOHO</h3></div>
+  <div ng-cust9><h3>Microsoft</h3></div>
+  <div ng-cust10><h3>Tata Consulting Services</h3></div>
+  <div ng-cust11><h3>Amazon</h3></div>
+</div>
+<div class="fbox3">
+<h4>IMAGE GALLERY</h4>
+<h2>AMAZON</h2>
+<div class="row">
+<div class="col-md-6">
+<img ng-src="{{com1.Photo}}" ng-click="ImageClick1()" style="height: 300px; width: 400px;
+            cursor: pointer" />
+</div>
+<div class="col-md-6">
+<img ng-src="{{com2.Photo}}" ng-click="ImageClick2()" style="height: 300px; width: 400px;
+            cursor: pointer" />
+</div>
+</div>
+<footer>
+	<div class="container">
+	<div class="lastbox" id="cont">
+	<div class="footheading">
+		<h1>Contact Us</h1>
+	</div>
+		<div class="icon">
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/whatsapp1.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/instagram.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/twitter.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="foot">
+			<h3>TechInfo |</h3>
+			<h3>Copyright |</h3>
+			<h3>Anonymous</h3>
+		</div>
+		</div>
+	</div>
+</footer>
+</html>

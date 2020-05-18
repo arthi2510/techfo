@@ -1,0 +1,41 @@
+.container
+{
+	margin:0 auto;
+	width:960px;
+	COLOR:black;
+	
+}
+body
+{
+	margin:0;
+	background:url("../Images/regbg.jpeg");;
+	background-size:100%;
+}
+header
+{
+	text-align:center;
+	color:black;
+}
+.container .register
+{
+	text-align:center;
+	font-family:Times New Roman;
+	font-weight:bold;
+	font-size:700;
+}
+input
+{
+	border-radius:8px;
+	width:300px;
+	padding:10px 20px;
+	position:relative;
+}
+input[type=submit]
+{
+	background:skyblue;
+}
+input[type=submit]:hover
+{
+	background:salmon;
+}
+

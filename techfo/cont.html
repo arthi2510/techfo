@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>TechFo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/css/style.css">
+		<link rel="stylesheet" href="css/css/animate.css">
+		<link rel="stylesheet" href="css/css/form.css">
+		<script src="js/js/js/wow.min.js"></script>
+		<script src="js/js/myscript.js"></script>
+		<script src="js/js/jquery-3.4.1.min.js"></script>
+		<script src="js/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		   <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+		   integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+		   
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		 <script>
+			new WOW().init();
+           </script>
+		<script>
+			var app = angular.module('myapp', []);
+			app.controller('mycontroller', function ($scope) {
+			$scope.sendForm = function () {
+			$scope.msg='Form Submited Successfully';
+			};
+		$scope.getClass = function (color) {
+		return color.toString();
+		}
+		});
+</script>
+<style>
+.valid.false
+ {
+	background: red;
+}
+.valid.true 
+{
+background: green;
+}
+.error
+ {
+color: red;
+}
+.imgbg
+{
+	background:salmon;
+}
+input[type=text],input[type=number],input[type=email]
+{
+	border-radius:5px;
+	box-shadow:3px 3px 1px skyblue;
+	width:40%;
+	height:60;
+}
+textarea
+{
+	box-shadow:3px 3px 1px skyblue;
+	border-radius:5px;
+	width:40%;
+}
+</style>
+	</head>
+<header>
+</div>
+	<div class="wow fadeIn logo">
+		<img src="Images/Images/Capture5.png" alt="TechFo" height="100" width="300">
+	</div>
+	<div class="nav">
+		<nav class="nav1">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="faq.html">COMPANIES</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="clear"></div>
+</header>
+<div class="feedbox"   ng-app="myapp" ng-controller="mycontroller">
+		<div class="imagebg"></div>
+		<div class="imgbg">
+			<div class="row " style="margin-top: 50px">
+			<div class="col-md-12 col-md-offset-0 form-container">
+			<h2>Feedback</h2>
+			<p>
+            Please provide your feedback below:
+			</p>
+			<form name="personForm" ng-submit="sendForm()">
+			<label for="name">Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+			<input id="name" name="name" type="text" ng-model="person.name" ng-pattern="/^[a-zA-Z]+$/" required />
+			<span class="error" ng-show="personForm.name.$error.required"> Required! </span>
+			
+			<span class="error" ng-show="personForm.name.$error.pattern"> Invalid name! </span>
+			
+			<br /><br />
+			<label for="address">Address&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+			<textarea id="address" name="address" type="text" ng-model="person.address" required ></textarea>
+			<span class="error" ng-show="personForm.address.$error.required"> Required! </span>
+			<br /><br />
+			<label for="contact">Contact No&nbsp&nbsp&nbsp&nbsp</label>
+			<input id="mobile" name="mobile" type="number" ng-model="person.mobile" ng-maxlength="10" ng-minlength="10" />
+			<span class="error" ng-show=" personForm.mobile.$error.mobile">Invalid number!</span>
+			<span class="error" ng-show=" personForm.mobile.$error.minlength">Number is less than 10 digits!</span>
+			<span class="error" ng-show=" personForm.mobile.$error.maxlength">Number exceeds 10 digits!</span>
+		<br /><br />
+		<label for="email">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+		<input id="email" name="email" type="email" ng-model="person.email" required />
+		<span class="error" ng-show="personForm.email.$error.required">Required!</span>
+		<span class="error" ng-show="personForm.email.$error.email">Invalid Email!</span>
+		<br /><br />
+		<div class="row">
+                            <div class="col-sm-12 form-group">
+								<label for="fb">Your Comments about us:</label>
+                                <textarea class="form-control" type="textarea" name="textarea" id="comments" placeholder="Your Comments" maxlength="500" rows="7"></textarea>
+                            </div>
+           </div>
+			<span class="error" ng-show="personForm.textarea.$error.required">Required!</span>
+			<span class="error" ng-show="personForm.textarea.$error.maxlength">You have exceeded maximum limit!</span>
+			<br><br />
+		<input type="checkbox" ng-model="terms" name="terms" id="terms" required />
+		<label for="terms">I Agree to the terms.</label>
+		<span class="error" ng-show="personForm.terms.$error.required">You must agree to the terms</span>
+		<br /><br />
+		<button type="submit">Submit Form</button>
+		<br /><br />
+		<span>{{msg}}</span>
+	</form>
+</div></div>
+</div>
+</div>
+<footer>
+	<div class="container">
+	<div class="lastbox" id="cont">
+	<div class="footheading">
+		<h1>Contact Us</h1>
+	</div>
+		<div class="icon">
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/whatsapp1.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/instagram.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/twitter.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="foot">
+			<h3>TechInfo |</h3>
+			<h3>Copyright |</h3>
+			<h3>Anonymous</h3>
+		</div>
+		</div>
+	</div>
+</footer>
+</html>
+</html>
+	
+	

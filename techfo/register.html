@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/style3.css">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="validation_pulgin/dist/jquery.validate.min.js"></script>
+<script src="js/form_valid.js"></script>
+<head>
+	<title>REGISTRATION FORM</title>
+</head>
+<script>
+$(document).ready(function()
+{
+	$('#logform').submit(function(e) {
+    e.preventDefault();
+    var name = $('#box1').val();
+    var email = $('#box2').val();
+    var password = $('#box3').val();
+	var cpwd=$('#box4').val();
+	var regex = /^[a-zA-Z]+$/;
+	var validname=regex.test(name);
+    $(".error").remove();
+ 
+    if (name.length < 1)
+	{
+      $('#box1').after('<span class="error">This field is required</span>');
+    }
+	if(!validname)
+	{
+		  $('#box1').after('<span class="error">Name can contain only alphabets</span>');
+    }
+    if (email.length < 1)
+	{
+      $('#box2').after('<span class="error">This field is required</span>');
+    } 
+	
+    if (password.length < 8) {
+      $('#box3').after('<span class="error">Password must be at least 8 characters long</span>');
+    }
+	var dataString='name1='+name+'&email1='+email+'password1='+password;
+	$.ajax(
+	{
+	type:"POST";
+	url:"";
+	data:dataString;
+	cache:false;
+	success:function(result)
+	{
+	$('#display').html(result);
+	}
+	
+  });
+	return false;
+});
+</script>
+<form action="" name="login" id="logform">
+
+		<header>
+		<h1>Register</h1>
+		<p>Please fill this form to create an account</p>
+	   </header>
+<div class="container">
+<div class="register">
+Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+<input type="text" id="box1" name="name" placeholder="Enter the Name" required />
+<br><span id="err1"></span>
+<br><br>
+
+Email-id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+<input type="email" id="box2" name="email" placeholder="Enter email" required /><br>
+<span id="err2"></span>
+<br><br>
+
+Password&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+<input type="password" id="box3" placeholder="Enter Password" name="password" required /><br>
+<span id="err3" required /><br>
+</span>
+<br><br>
+
+Confirm Password&nbsp&nbsp&nbsp:
+<input type="password" id="box4" name="cpassword" placeholder="Re-Enter password" required /><br>
+<span id="err4" required /></span>
+<br><br>
+<input type="submit" onclick="reg()" id="box5" style="width:100" name="sub">
+</div>
+<div id="display"></div>
+</div>
+</form>
+</html>

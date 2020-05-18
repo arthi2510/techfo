@@ -1,0 +1,11 @@
+.readmore
+{
+	background:url("../Images/slider4.jpg");
+	padding:300px;
+	background-size:100%;
+}
+.readmore a
+{
+	text-decoration:none;
+	color:white;
+}

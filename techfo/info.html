@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Comapny Info</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+</head>
+<script>
+	$(document).ready(function()
+		{
+			$.getJSON("com_info.json",function(data){
+			var comdata= '';
+			$.each(data,function(key,value){
+				comdata += '<tr>';
+				comdata += '<td>'+value.name+'</td>';
+				comdata += '<td>'+value.ceo+'</td>';
+				comdata += '<td>'+value.head+'</td>';
+		});
+		$('#comtable').append(comdata);
+		});
+	});
+</script>
+<body>
+	<div class="container">
+		<div class="table-responsive">
+			<h1>Company Details</h1>
+			<br>
+		<table class="table table-bordered table-striped" id="comtable">
+			<tr>
+				<th>Name</th>
+				<th>CEO</th>
+				<th>HeadQuarters</th>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>
