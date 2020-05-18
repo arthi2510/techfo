@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html ng-controller="mycontroller">
+	<head>
+		<title>TechFo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/css/style.css">
+		<link rel="stylesheet" href="css/css/animate.css">
+		<script src="js/wow.min.js"></script>
+		<script src="js/myscript.js"></script>
+		<script src="js/js/jquery-3.4.1.min.js"></script>
+		<script src="js/js/bootstrap.min.js"></script>
+		   <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+		   integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+		   
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		 <script>
+			new WOW().init();
+           </script>
+		   <script>
+		    var app = angular.module('myapp',[]);
+			app.directive('ngCust',function(){
+			return {
+
+            link:function($scope,element,attrs) {
+                element.bind('click',function () {
+                    element.html('High Performance. Delivered');
+                });}
+        }});
+		   </script>
+		
+	</head>
+<header>
+<div class="top1">
+</div>
+	<div class="wow fadeIn logo">
+		<img src="Images/Images/Capture5.png" alt="TechFo" height="100" width="300">
+	</div>
+	<div class="nav">
+		<nav class="nav1">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="cont.html">Contact Us</a></li>
+				<li><a href="faq.html">COMPANIES</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="clear"></div>
+</header>
+
+<div class="box1"> 
+	<h1><marquee>Welcome to Tech InFO!</marquee></h1>
+</div>
+<div class="box2">
+<div class="container">
+    <div class="row">
+	<div class="login">
+        <div class="form_bg">
+            <form name="log" action="" method="POST">
+                 <h2 class="text-center">Login</h2>
+                <br/>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="userid" placeholder="User id" name="id">
+                </div><br>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd">
+                
+                    </div>
+                    <br/>
+                   <div class="align-center">
+                <button type="submit" class="btn btn-default" id="login1">Login</button>
+                    </div><br>
+					<div class="rem">
+				<input type="checkbox"><h3 style="font-weight:bold" class="remtext">Remember me</h3></input>
+				</div>
+				<div class="pwd">
+				<span class="forgotpwd" style="font-size:40"><a href="#"><h3 style="font-weight:bold">Forgot password?</h3></a></span>
+				</div><br>
+				<div class="reg">
+				<br><h3 style="font-weight:bold">Don't have an account?</h3><span><a href="register.html"><h3 style="font-weight:bold">Register</h3></a></span>
+				</div>
+            </form>
+        </div>
+		<h2 id="msg"></h2>
+		</div>
+    </div>
+</div>
+ </div>
+<div class="sec1">
+	<div class="center wow fadeInDown animated" style="visibility:visible">
+		<h2 class="heading">Companies you can walkthrough</h2>
+	</div>
+ <div class="container" style="padding:0px 50px">
+<div class="row"  ng-app="myapp">
+	<div class="col-md-2" >
+		<img class="img1" ng-cust="" src="Images/Images/download.png" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/cts.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/google.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/cts.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/infosys.jpg" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/wipro.jpg" class="img1" height="150" width="150">
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-2">
+		<img src="Images/Images/ge.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/zoho.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/micro.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/tcs.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/amazon.png" class="img1" height="150" width="150">
+	</div>
+	<div class="col-md-2">
+		<img src="Images/Images/hcl.jpg" class="img1" height="150" width="150">
+	</div>
+	</div>
+</div>
+	<div class="clear"></div>
+</div>
+</div>
+<section id="feature">
+		<div class="container">
+			<div class="heading">
+				<h1 class="wow bounceIn">Features for candidates</h1>
+			</div>
+		<div class="row">
+			<div class="col-md-2">
+			<div class="imgicon">
+				<img src="Images/Images/user.jpg" height="120" width="130" class="img img-circle">
+			</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Sign Up & Set up your profile</h3>
+			</div>
+			<div class="col-md-2">
+			<div class="imgicon">
+				<img src="Images/Images/search.png" height="100" width="120" class="img img-circle">
+			</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Search oppurtunities</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			<div class="imgicon">
+				<img src="Images/Images/settings.png" height="120" width="130" class="img img-circle" >
+			</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Submit,track and manage applications</h3>
+			</div>
+			<div class="col-md-2">
+			<div class="imgicon">
+				<img src="Images\Images\grp.png" height="120" width="140" class="img img-circle">
+			</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Invite students to join us</h3>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="jobs">
+	<div class="container">
+		<h1 class="heading1">Info about company</h1>
+		<button class="btn1"><a href="moreinfo.html">Go To Info</a></button>
+	</div>
+</section>
+<footer>
+	<div class="container">
+	<div class="lastbox" id="cont">
+	<div class="footheading">
+		<h1>Contact Us</h1>
+	</div>
+		<div class="icon">
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/whatsapp1.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/instagram.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		<div class="footicon">
+			<a href="#"><img src="Icons/Icons/twitter.png" alt="Whatsapp" height="60" width="60"></a>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="foot">
+			<h3>TechInfo |</h3>
+			<h3>Copyright |</h3>
+			<h3>Anonymous</h3>
+		</div>
+		</div>
+	</div>
+</footer>
+</html>
+</html>
+	
+	
